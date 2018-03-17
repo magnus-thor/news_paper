@@ -1,5 +1,5 @@
 Given("I am on {string} page") do |page_path|
-  page_path.split(" ").join("_") + "_path"
+  visit page_path.split(" ").join("_") + "_path"
 end
 
 When("I fill in {string} with {string}") do |field, text|
@@ -12,6 +12,5 @@ end
 
 Then("I am on the article page {string}") do |title|
   article = Article.find_by(title)
-  binding.pry
   expect(current_path).to be
 end
